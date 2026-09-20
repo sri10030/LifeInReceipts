@@ -4,6 +4,7 @@ import Hero from './components/Hero.jsx';
 import ReceiptExplorer from './components/ReceiptExplorer.jsx';
 import ConceptSteps from './components/ConceptSteps.jsx';
 import ConnectionPreview from './components/ConnectionPreview.jsx';
+import ConnectionExplorer from './components/ConnectionExplorer.jsx';
 import MuseumShowcase from './components/MuseumShowcase.jsx';
 import ReceiptDetailModal from './components/ReceiptDetailModal.jsx';
 import Footer from './components/Footer.jsx';
@@ -73,8 +74,11 @@ export default function App() {
         {/* Methodology / Concept Steps */}
         <ConceptSteps />
 
-        {/* Connection Discovery Preview */}
+        {/* Connection Discovery Preview (visual teaser) */}
         <ConnectionPreview onNodeSelect={handleNodeSelect} />
+
+        {/* Phase 4 — Connection Engine Explorer */}
+        <ConnectionExplorer onSelectReceipt={handleNodeSelect} />
 
         {/* Editorial Digital Museum Showcase */}
         <MuseumShowcase onExhibitClick={handleExhibitClick} />
