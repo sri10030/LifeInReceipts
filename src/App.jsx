@@ -6,6 +6,7 @@ import ConceptSteps from './components/ConceptSteps.jsx';
 import ConnectionPreview from './components/ConnectionPreview.jsx';
 import ConnectionExplorer from './components/ConnectionExplorer.jsx';
 import StoryExplorer from './components/StoryExplorer.jsx';
+import InsightsExplorer from './components/InsightsExplorer.jsx';
 import MuseumShowcase from './components/MuseumShowcase.jsx';
 import ReceiptDetailModal from './components/ReceiptDetailModal.jsx';
 import Footer from './components/Footer.jsx';
@@ -83,6 +84,9 @@ export default function App() {
 
         {/* Phase 5 — Story Engine & Narrative Life Chapters */}
         <StoryExplorer onSelectReceipt={handleNodeSelect} />
+
+        {/* Phase 6 — Objective Insights & Pattern Discovery */}
+        <InsightsExplorer />
 
         {/* Editorial Digital Museum Showcase */}
         <MuseumShowcase onExhibitClick={handleExhibitClick} />
