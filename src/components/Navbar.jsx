@@ -16,7 +16,7 @@ export default function Navbar({ onExploreClick }) {
 
   const navItems = [
     { name: 'Home', href: '#hero' },
-    { name: 'Explore', href: '#explore' },
+    { name: 'Explore', href: '#explorer' },
     { name: 'Connections', href: '#connections' },
     { name: 'Stories', href: '#stories' }
   ];

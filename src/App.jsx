@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
+import ReceiptExplorer from './components/ReceiptExplorer.jsx';
 import ConceptSteps from './components/ConceptSteps.jsx';
 import ConnectionPreview from './components/ConnectionPreview.jsx';
 import MuseumShowcase from './components/MuseumShowcase.jsx';
@@ -11,9 +12,9 @@ export default function App() {
   const [selectedModalNode, setSelectedModalNode] = useState(null);
 
   const handleExploreClick = () => {
-    const exploreSection = document.getElementById('explore');
-    if (exploreSection) {
-      exploreSection.scrollIntoView({ behavior: 'smooth' });
+    const explorerSection = document.getElementById('explorer');
+    if (explorerSection) {
+      explorerSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -36,7 +37,11 @@ export default function App() {
       subtitle: exhibit.timeframe,
       time: 'Museum Chapter',
       amount: '$22.95 Total',
-      exhibitData: exhibit
+      exhibitData: exhibit,
+      metadata: {
+        theme: exhibit.theme,
+        exhibitType: 'Curated Museum Exhibit Chapter'
+      }
     });
   };
 
@@ -61,6 +66,9 @@ export default function App() {
           onSeeHowItWorksClick={handleSeeHowItWorksClick}
           onSelectNode={handleNodeSelect}
         />
+
+        {/* Phase 3 Digital Receipt Explorer */}
+        <ReceiptExplorer onSelectReceipt={handleNodeSelect} />
 
         {/* Methodology / Concept Steps */}
         <ConceptSteps />

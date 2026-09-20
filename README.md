@@ -4,13 +4,13 @@
 
 ---
 
-## 🌟 Short Description
+## Short Description
 
 **LifeInReceipts** is an interactive web experience and digital museum platform that synthesizes raw, fragmented digital receipts—financial transactions, music listening logs, dining receipts, transit activity, and micro-moments—into interconnected visual constellations and curated personal narrative exhibits.
 
 ---
 
-## 💡 Hackathon & Problem Overview
+## Hackathon & Problem Overview
 
 ### The Problem
 Every day, we leave behind hundreds of digital footprints across banks, streaming platforms, delivery apps, and location logs. In isolation, a \$4.50 coffee receipt or a midnight song play feels transactional and forgettable. Traditional financial and activity tracking tools offer rigid spreadsheets and bland bar charts that miss the human context behind our spending and behavior.
@@ -20,22 +20,22 @@ Every day, we leave behind hundreds of digital footprints across banks, streamin
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- **🌌 Interactive Constellation Node Graph**: Dynamic visual node map connecting multi-faceted receipts (Music, Coffee, Subscriptions, Rides, Groceries, Books) with hover effects, pulsing glow connections, and interactive node inspection.
-- **🔬 4-Stage Methodology Pipeline**:
+- ** Interactive Constellation Node Graph**: Dynamic visual node map connecting multi-faceted receipts (Music, Coffee, Subscriptions, Rides, Groceries, Books) with hover effects, pulsing glow connections, and interactive node inspection.
+- ** 4-Stage Methodology Pipeline**:
   1. **Moments**: Captures everyday digital traces.
   2. **Connections**: Identifies time, location, and contextual relationships.
   3. **Patterns**: Uncovers recurring routines and habits.
   4. **Stories**: Synthesizes patterns into editorial digital museum exhibits.
-- **🏛️ Editorial Digital Museum Showcase**: Interactive exhibit chapters showcasing curated life periods (e.g., *Midnight Coding Sessions*, *The Coffee-Fuelled Hackathon*, *Autumn Indie Road Trip*).
-- **🔎 Deep Receipt Inspection Modal**: Micro-detail modal card displaying itemized costs, exact timestamps, geo-coordinates, emotion tags, connected audio tracks, and contextual notes.
-- **🎨 Glassmorphic Dark-Mode UI**: Built with a curated dark color palette (`#080B16`), subtle glassmorphism, responsive CSS grid layouts, and custom interactive transitions.
-- **📱 Fully Responsive**: Optimized for desktop, tablet, and mobile views with custom navigation drawers.
+- ** Editorial Digital Museum Showcase**: Interactive exhibit chapters showcasing curated life periods (e.g., *Midnight Coding Sessions*, *The Coffee-Fuelled Hackathon*, *Autumn Indie Road Trip*).
+- ** Deep Receipt Inspection Modal**: Micro-detail modal card displaying itemized costs, exact timestamps, geo-coordinates, emotion tags, connected audio tracks, and contextual notes.
+- ** Glassmorphic Dark-Mode UI**: Built with a curated dark color palette (`#080B16`), subtle glassmorphism, responsive CSS grid layouts, and custom interactive transitions.
+- ** Fully Responsive**: Optimized for desktop, tablet, and mobile views with custom navigation drawers.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Category | Technology |
 | :--- | :--- |
@@ -46,7 +46,7 @@ Every day, we leave behind hundreds of digital footprints across banks, streamin
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 LifeInReceipts/
@@ -81,7 +81,7 @@ LifeInReceipts/
 
 ---
 
-## 🚀 How to Install and Run
+## How to Install and Run
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v18.0.0 or higher recommended)
@@ -118,7 +118,7 @@ LifeInReceipts/
 
 ---
 
-## 📜 npm Commands
+## npm Commands
 
 | Command | Action |
 | :--- | :--- |
@@ -129,15 +129,15 @@ LifeInReceipts/
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
-- **🤖 Automated Multi-Format Dataset Parser**: Enable drag-and-drop CSV, JSON, TSV, and XML upload to dynamically ingest user receipts into the constellation graph.
-- **🔑 Live OAuth Integration**: Direct API connections with Spotify, Plaid, and Google Location History for real-time receipt syncing.
-- **🌌 Spatial 3D Constellation Engine**: Upgrade the 2D node visualizer to a 3D WebGL space using Three.js / React Three Fiber.
-- **📖 Personalized PDF/Web Memory Storybooks**: Export curated museum exhibits as shareable interactive links or high-resolution digital storybooks.
+- ** Automated Multi-Format Dataset Parser**: Enable drag-and-drop CSV, JSON, TSV, and XML upload to dynamically ingest user receipts into the constellation graph.
+- ** Live OAuth Integration**: Direct API connections with Spotify, Plaid, and Google Location History for real-time receipt syncing.
+- ** Spatial 3D Constellation Engine**: Upgrade the 2D node visualizer to a 3D WebGL space using Three.js / React Three Fiber.
+- ** Personalized PDF/Web Memory Storybooks**: Export curated museum exhibits as shareable interactive links or high-resolution digital storybooks.
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
