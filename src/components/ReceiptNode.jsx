@@ -8,19 +8,23 @@ import {
   MessageSquare,
   Search,
   Calendar,
-  FileText
+  FileText,
+  Plane,
+  Heart
 } from 'lucide-react';
 
 export const CategoryMeta = {
-  music: { label: 'Music', icon: Music, color: '#8B5CF6', tagBg: 'rgba(139, 92, 246, 0.15)' },
+  music: { label: 'Music', icon: Music, color: '#A855F7', tagBg: 'rgba(168, 85, 247, 0.15)' },
   place: { label: 'Place', icon: MapPin, color: '#22D3EE', tagBg: 'rgba(34, 211, 238, 0.15)' },
-  photo: { label: 'Photo', icon: Camera, color: '#60A5FA', tagBg: 'rgba(96, 165, 250, 0.15)' },
-  purchase: { label: 'Purchase', icon: ShoppingBag, color: '#2563FF', tagBg: 'rgba(37, 99, 255, 0.15)' },
-  movie: { label: 'Movie', icon: Film, color: '#A855F7', tagBg: 'rgba(168, 85, 247, 0.15)' },
+  photo: { label: 'Photo', icon: Camera, color: '#38BDF8', tagBg: 'rgba(56, 189, 248, 0.15)' },
+  purchase: { label: 'Purchase', icon: ShoppingBag, color: '#60A5FA', tagBg: 'rgba(96, 165, 250, 0.15)' },
+  movie: { label: 'Movie', icon: Film, color: '#C084FC', tagBg: 'rgba(192, 132, 252, 0.15)' },
   message: { label: 'Message', icon: MessageSquare, color: '#38BDF8', tagBg: 'rgba(56, 189, 248, 0.15)' },
   search: { label: 'Search', icon: Search, color: '#22D3EE', tagBg: 'rgba(34, 211, 238, 0.15)' },
   event: { label: 'Event', icon: Calendar, color: '#3B82F6', tagBg: 'rgba(59, 130, 246, 0.15)' },
-  note: { label: 'Note', icon: FileText, color: '#818CF8', tagBg: 'rgba(129, 140, 248, 0.15)' }
+  note: { label: 'Note', icon: FileText, color: '#818CF8', tagBg: 'rgba(129, 140, 248, 0.15)' },
+  travel: { label: 'Travel', icon: Plane, color: '#38BDF8', tagBg: 'rgba(56, 189, 248, 0.15)' },
+  health: { label: 'Health', icon: Heart, color: '#2DD4BF', tagBg: 'rgba(45, 212, 191, 0.15)' }
 };
 
 export default function ReceiptNode({
@@ -47,12 +51,12 @@ export default function ReceiptNode({
       onMouseLeave={onMouseLeave}
       style={{
         position: 'relative',
-        width: '215px',
-        padding: '16px 18px',
-        borderRadius: '18px',
+        width: '158px',
+        padding: '9px 12px',
+        borderRadius: '14px',
         background: isSelected
-          ? 'linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(37, 99, 255, 0.35))'
-          : 'rgba(15, 23, 42, 0.85)',
+          ? 'linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(37, 99, 255, 0.35))'
+          : 'rgba(15, 23, 42, 0.92)',
         backdropFilter: 'blur(16px)',
         WebkitBackdropFilter: 'blur(16px)',
         border: isSelected
@@ -61,25 +65,25 @@ export default function ReceiptNode({
           ? '1.5px solid #2563FF'
           : '1px solid rgba(255, 255, 255, 0.12)',
         boxShadow: isSelected
-          ? '0 0 35px rgba(34, 211, 238, 0.45)'
+          ? '0 0 30px rgba(34, 211, 238, 0.45)'
           : isHovered
-          ? '0 14px 35px rgba(37, 99, 255, 0.4)'
-          : '0 10px 28px rgba(0, 0, 0, 0.45)',
+          ? '0 12px 28px rgba(37, 99, 255, 0.4)'
+          : '0 8px 24px rgba(0, 0, 0, 0.5)',
         cursor: 'pointer',
-        transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-        transform: isHovered ? 'translateY(-6px) scale(1.03)' : 'none',
+        transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+        transform: isHovered ? 'translateY(-3px) scale(1.02)' : 'none',
         userSelect: 'none',
         ...style
       }}
     >
       {/* Top Row */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '5px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
           <div
             style={{
-              width: '28px',
-              height: '28px',
-              borderRadius: '8px',
+              width: '22px',
+              height: '22px',
+              borderRadius: '6px',
               background: meta.tagBg,
               display: 'flex',
               alignItems: 'center',
@@ -87,11 +91,11 @@ export default function ReceiptNode({
               color: meta.color
             }}
           >
-            <Icon size={15} />
+            <Icon size={12} />
           </div>
           <span
             style={{
-              fontSize: '0.7rem',
+              fontSize: '0.65rem',
               fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: '0.05em',
@@ -101,7 +105,7 @@ export default function ReceiptNode({
             {meta.label}
           </span>
         </div>
-        <span style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: 600 }}>
+        <span style={{ fontSize: '0.64rem', color: '#64748B', fontWeight: 600 }}>
           {time}
         </span>
       </div>
@@ -109,10 +113,10 @@ export default function ReceiptNode({
       {/* Main Title */}
       <h4
         style={{
-          fontSize: '0.94rem',
+          fontSize: '0.82rem',
           fontWeight: 800,
           color: '#FFFFFF',
-          marginBottom: '4px',
+          marginBottom: '2px',
           whiteSpace: 'nowrap',
           overflow: 'hidden',
           textOverflow: 'ellipsis'
@@ -124,9 +128,9 @@ export default function ReceiptNode({
       {/* Subtitle */}
       <p
         style={{
-          fontSize: '0.78rem',
+          fontSize: '0.68rem',
           color: '#94A3B8',
-          marginBottom: amount ? '8px' : '0px',
+          marginBottom: amount ? '5px' : '0px',
           whiteSpace: 'nowrap',
           overflow: 'hidden',
           textOverflow: 'ellipsis'
@@ -142,12 +146,12 @@ export default function ReceiptNode({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            paddingTop: '8px',
-            borderTop: '1px stroke-dasharray rgba(255, 255, 255, 0.08)'
+            paddingTop: '5px',
+            borderTop: '1px dashed rgba(255, 255, 255, 0.08)'
           }}
         >
-          <span style={{ fontSize: '0.7rem', color: '#64748B' }}>Total</span>
-          <span style={{ fontSize: '0.88rem', fontWeight: 800, color: '#22D3EE' }}>{amount}</span>
+          <span style={{ fontSize: '0.64rem', color: '#64748B' }}>Total</span>
+          <span style={{ fontSize: '0.80rem', fontWeight: 800, color: '#22D3EE' }}>{amount}</span>
         </div>
       )}
 
@@ -155,13 +159,13 @@ export default function ReceiptNode({
       <div
         style={{
           position: 'absolute',
-          top: '-4px',
-          right: '-4px',
-          width: '9px',
-          height: '9px',
+          top: '-3px',
+          right: '-3px',
+          width: '8px',
+          height: '8px',
           borderRadius: '50%',
           background: isSelected ? '#22D3EE' : '#2563FF',
-          boxShadow: `0 0 12px ${isSelected ? '#22D3EE' : '#2563FF'}`
+          boxShadow: `0 0 10px ${isSelected ? '#22D3EE' : '#2563FF'}`
         }}
       />
     </div>

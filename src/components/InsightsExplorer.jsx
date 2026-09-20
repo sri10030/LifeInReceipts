@@ -232,7 +232,7 @@ export default function InsightsExplorer() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(440px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 440px), 1fr))',
             gap: '24px',
             marginBottom: '48px',
           }}
@@ -374,7 +374,7 @@ export default function InsightsExplorer() {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
                 gap: '14px',
                 marginBottom: '20px',
               }}
@@ -547,7 +547,7 @@ export default function InsightsExplorer() {
             <div style={{ fontSize: '0.78rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
               Historical Peak Activity Dates By Source:
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '12px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '12px' }}>
               {temporal.peaks.map((peak, idx) => (
                 <div
                   key={idx}
@@ -584,7 +584,7 @@ export default function InsightsExplorer() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
               gap: '20px',
             }}
           >

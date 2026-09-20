@@ -19,7 +19,8 @@ export default function Navbar({ onExploreClick }) {
     { name: 'Explore', href: '#explorer' },
     { name: 'Connections', href: '#connections-explorer' },
     { name: 'Stories', href: '#stories' },
-    { name: 'Insights', href: '#insights' }
+    { name: 'Insights', href: '#insights' },
+    { name: 'Museum', href: '#museum-showcase' }
   ];
 
   return (

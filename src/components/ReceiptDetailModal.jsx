@@ -3,6 +3,14 @@ import { X, Sparkles, ArrowRight, MapPin, Clock, Database, Tag, ShieldCheck, Mus
 import { CategoryMeta } from './ReceiptNode.jsx';
 
 export default function ReceiptDetailModal({ node, onClose, onExploreDeeper }) {
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
+
   if (!node) return null;
 
   const meta = CategoryMeta[node.type] || CategoryMeta.purchase;
@@ -160,7 +168,7 @@ export default function ReceiptDetailModal({ node, onClose, onExploreDeeper }) {
               <Clock size={14} color="#60A5FA" /> Date & Time
             </span>
             <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#E2E8F0' }}>
-              {node.date || 'N/A'} • {node.time || ''}
+              {node.date || 'Undated'}{node.time ? ` • ${node.time}` : ''}
             </span>
           </div>
 
@@ -221,7 +229,7 @@ export default function ReceiptDetailModal({ node, onClose, onExploreDeeper }) {
             </span>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               {Object.entries(node.metadata).map(([key, val]) => {
-                if (!val) return null;
+                if (val === undefined || val === null || val === '') return null;
                 // format key name nicely
                 const formattedKey = key
                   .replace(/([A-Z])/g, ' $1')

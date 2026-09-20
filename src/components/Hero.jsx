@@ -11,7 +11,7 @@ export default function Hero({ onExploreClick, onSeeHowItWorksClick, onSelectNod
         minHeight: '100vh',
         paddingTop: '120px',
         paddingBottom: '80px',
-        background: 'linear-gradient(180deg, #080B16 0%, #0F172A 70%, #F8FAFC 100%)',
+        background: 'linear-gradient(180deg, #080B16 0%, #0F172A 50%, #080B16 100%)',
         color: '#FFFFFF',
         overflow: 'hidden'
       }}
@@ -43,33 +43,6 @@ export default function Hero({ onExploreClick, onSeeHowItWorksClick, onSelectNod
           zIndex: 10
         }}
       >
-        {/* Eyebrow Pill */}
-        <div
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '6px 16px',
-            borderRadius: '9999px',
-            background: 'rgba(37, 99, 255, 0.12)',
-            border: '1px solid rgba(34, 211, 238, 0.3)',
-            marginBottom: '24px'
-          }}
-        >
-          <Sparkles size={14} color="#22D3EE" />
-          <span
-            style={{
-              fontSize: '0.82rem',
-              fontWeight: 700,
-              letterSpacing: '0.04em',
-              color: '#22D3EE',
-              textTransform: 'uppercase'
-            }}
-          >
-            Digital Museum Experience • Phase 1 Foundation
-          </span>
-        </div>
-
         {/* 2-Column Responsive Hero Grid */}
         <div
           style={{
@@ -82,6 +55,33 @@ export default function Hero({ onExploreClick, onSeeHowItWorksClick, onSelectNod
         >
           {/* Left Column: Headlines & CTAs */}
           <div>
+            {/* Eyebrow Pill */}
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '6px 16px',
+                borderRadius: '9999px',
+                background: 'rgba(37, 99, 255, 0.12)',
+                border: '1px solid rgba(34, 211, 238, 0.3)',
+                marginBottom: '20px'
+              }}
+            >
+              <Sparkles size={14} color="#22D3EE" />
+              <span
+                style={{
+                  fontSize: '0.82rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.04em',
+                  color: '#22D3EE',
+                  textTransform: 'uppercase'
+                }}
+              >
+                Digital Museum Experience • Phase 1 Foundation
+              </span>
+            </div>
+
             <h1
               className="hero-headline"
               style={{
@@ -175,7 +175,16 @@ export default function Hero({ onExploreClick, onSeeHowItWorksClick, onSelectNod
           </div>
 
           {/* Right Column: Connected Constellation Graph */}
-          <div>
+          <div
+            className="constellation-wrapper"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              position: 'relative'
+            }}
+          >
             <ConstellationVisual onSelectNode={onSelectNode} />
           </div>
         </div>
@@ -184,7 +193,23 @@ export default function Hero({ onExploreClick, onSeeHowItWorksClick, onSelectNod
       <style>{`
         @media (min-width: 1024px) {
           .hero-grid-container {
-            grid-template-columns: 1fr 1.15fr !important;
+            grid-template-columns: 1fr 1.08fr !important;
+            gap: 40px !important;
+            align-items: center !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .constellation-wrapper {
+            transform: scale(0.88);
+            transform-origin: center top;
+            margin-bottom: -40px;
+          }
+        }
+        @media (max-width: 480px) {
+          .constellation-wrapper {
+            transform: scale(0.78);
+            transform-origin: center top;
+            margin-bottom: -80px;
           }
         }
       `}</style>
