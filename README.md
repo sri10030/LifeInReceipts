@@ -1,40 +1,126 @@
-# LifeInReceipts 🧾
+# LifeInReceipts
 
-> **Transforming daily digital traces into interactive visual constellations and editorial museum stories.**
+> Turning fragmented digital activity into meaningful connections, patterns, and stories.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-2563FF?style=for-the-badge&logo=vercel&logoColor=white)](https://life-in-receipts-lime.vercel.app/)  
-🌐 **Live Deployment**: [https://life-in-receipts-lime.vercel.app/](https://life-in-receipts-lime.vercel.app/)
+## Live Demo
 
----
-
-## Short Description
-
-**LifeInReceipts** is an interactive web experience and digital museum platform that synthesizes raw, fragmented digital receipts—financial transactions, music listening logs, dining receipts, transit activity, and micro-moments—into interconnected visual constellations and curated personal narrative exhibits.
+**https://life-in-receipts-lime.vercel.app/**
 
 ---
 
-## Hackathon & Problem Overview
+## Overview
 
-### The Problem
-Every day, we leave behind hundreds of digital footprints across banks, streaming platforms, delivery apps, and location logs. In isolation, a \$4.50 coffee receipt or a midnight song play feels transactional and forgettable. Traditional financial and activity tracking tools offer rigid spreadsheets and bland bar charts that miss the human context behind our spending and behavior.
+LifeInReceipts is an interactive web experience that transforms thousands of digital activity records into a visual journey.
 
-### The Solution
-**LifeInReceipts** reimagines digital footprint data as personal history. By correlating temporal, spatial, and emotional markers across disparate datasets (financial transactions, Spotify histories, household expense logs), **LifeInReceipts** connects isolated data nodes into visual constellations and curates them into editorial museum chapters. It turns raw transactions into a living digital memory box.
+Instead of presenting raw data as tables or isolated records, the application explores relationships between moments through time, location, category, and activity. These relationships are then organized into patterns and story-like chapters.
+
+The experience follows a simple flow:
+
+**Moments → Connections → Patterns → Stories**
 
 ---
 
-## Key Features
+## What It Does
 
-- ** Interactive Constellation Node Graph**: Dynamic visual node map connecting multi-faceted receipts (Music, Coffee, Subscriptions, Rides, Groceries, Books) with hover effects, pulsing glow connections, and interactive node inspection.
-- ** 4-Stage Methodology Pipeline**:
-  1. **Moments**: Captures everyday digital traces.
-  2. **Connections**: Identifies time, location, and contextual relationships.
-  3. **Patterns**: Uncovers recurring routines and habits.
-  4. **Stories**: Synthesizes patterns into editorial digital museum exhibits.
-- ** Editorial Digital Museum Showcase**: Interactive exhibit chapters showcasing curated life periods (e.g., *Midnight Coding Sessions*, *The Coffee-Fuelled Hackathon*, *Autumn Indie Road Trip*).
-- ** Deep Receipt Inspection Modal**: Micro-detail modal card displaying itemized costs, exact timestamps, geo-coordinates, emotion tags, connected audio tracks, and contextual notes.
-- ** Glassmorphic Dark-Mode UI**: Built with a curated dark color palette (`#080B16`), subtle glassmorphism, responsive CSS grid layouts, and custom interactive transitions.
-- ** Fully Responsive**: Optimized for desktop, tablet, and mobile views with custom navigation drawers.
+### Receipt Explorer
+
+Explore and search through 3,000 records from three different datasets.
+
+- Full-text search
+- Category filtering
+- Dataset filtering
+- Value-based filtering
+- Sorting and progressive loading
+- Detailed receipt inspection
+
+### Connection Discovery
+
+The connection engine identifies relationships between records using measurable signals such as:
+
+- Same date
+- Same location
+- Temporal proximity
+- Related categories
+- High-value activity
+- Shared artists
+
+Each connection has an explainable score and supporting signals.
+
+### Life Chapters
+
+Connected moments are grouped into larger story units based on shared context.
+
+Each chapter presents:
+
+- Date and location
+- Connected moments
+- Categories
+- Connection count
+- Monetary activity
+- Individual receipt details
+
+### Insights
+
+The insights section provides a higher-level view of the complete dataset, including:
+
+- Category distribution
+- Spending ranges
+- Activity by time of day
+- Geographic distribution
+- Dataset comparisons
+- Connection statistics
+- Story statistics
+
+### Digital Museum
+
+The final experience brings the discovered patterns back into an editorial-style presentation, turning raw records into a visual narrative.
+
+---
+
+## Dataset
+
+The application works with 3,000 records across three datasets.
+
+| Dataset | Records | Description |
+| :--- | ---: | :--- |
+| India MultiFacet | 1,000 | Transactions and activity records |
+| Daily Household | 1,000 | Household transaction records |
+| Spotify History | 1,000 | Music listening records |
+| **Total** | **3,000** | |
+
+The application normalizes these datasets into a common structure before running the connection, story, and insight engines.
+
+---
+
+## Architecture
+
+```text
+Raw Datasets
+     |
+     v
+Normalization
+     |
+     +-------------------+
+     |                   |
+     v                   v
+Receipt Explorer    Insights Engine
+     |
+     v
+Connection Engine
+     |
+     v
+Story Engine
+     |
+     v
+Interactive Experience
+     |
+     +-------------------+
+     |         |         |
+     v         v         v
+Connections  Stories   Insights
+```
+
+The connection and story engines are deterministic and operate directly on the normalized dataset. No external AI service is required.
 
 ---
 
@@ -42,10 +128,14 @@ Every day, we leave behind hundreds of digital footprints across banks, streamin
 
 | Category | Technology |
 | :--- | :--- |
-| **Framework & Core** | React 18, Vite 5, JavaScript (ES Module) |
-| **Styling** | Custom Vanilla CSS (Design Tokens, Glassmorphism, CSS Grid & Flexbox) |
-| **Animation & Icons** | Framer Motion, Lucide React |
-| **Build & Tooling** | Vite, Node.js |
+| **Frontend** | React |
+| **Build Tool** | Vite |
+| **Language** | JavaScript / JSX |
+| **Styling** | Custom CSS |
+| **Animation** | Framer Motion |
+| **Icons** | Lucide React |
+| **Data Processing** | Client-side JavaScript |
+| **Deployment** | Vercel |
 
 ---
 
@@ -53,94 +143,95 @@ Every day, we leave behind hundreds of digital footprints across banks, streamin
 
 ```text
 LifeInReceipts/
-├── Augment_IndiaTransactMultiFacet2024.csv    # Multi-facet transaction dataset (CSV)
-├── Augment_IndiaTransactMultiFacet2024.json   # Multi-facet transaction dataset (JSON)
-├── Augment_IndiaTransactMultiFacet2024.tsv    # Multi-facet transaction dataset (TSV)
-├── Augment_IndiaTransactMultiFacet2024.xml    # Multi-facet transaction dataset (XML)
-├── Daily Household Transactions.csv          # Household transaction dataset
-├── spotify_data_dictionary.csv                # Data dictionary for streaming history
-├── spotify_history.csv                        # Music streaming history dataset
-├── index.html                                 # HTML entry point
-├── package.json                               # Dependencies and scripts
-├── package-lock.json                          # Lockfile
-├── vite.config.js                             # Vite bundler configuration
-├── LICENSE                                    # MIT License
-├── .gitignore                                 # Git ignore configuration
-└── src/
-    ├── main.jsx                               # Application root entry point
-    ├── App.jsx                                # Main container layout & state manager
-    ├── index.css                              # Design system, tokens, and utility classes
-    └── components/
-        ├── Navbar.jsx                         # Top navigation bar with scroll detection
-        ├── Hero.jsx                           # Main hero header with live stats & CTA
-        ├── ConstellationVisual.jsx            # Interactive SVG node graph canvas
-        ├── ReceiptNode.jsx                    # Floating interactive node element
-        ├── ConceptSteps.jsx                   # 4-Stage Methodology pipeline presentation
-        ├── ConnectionPreview.jsx              # Connection discovery grid & category filters
-        ├── MuseumShowcase.jsx                 # Editorial digital museum exhibit cards
-        ├── ReceiptDetailModal.jsx             # Comprehensive receipt inspection modal
-        └── Footer.jsx                         # Project footer & metadata credits
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Hero.jsx
+│   │   ├── ConstellationVisual.jsx
+│   │   ├── ReceiptExplorer.jsx
+│   │   ├── ReceiptDetailModal.jsx
+│   │   ├── ConnectionExplorer.jsx
+│   │   ├── ConnectionCard.jsx
+│   │   ├── StoryExplorer.jsx
+│   │   ├── StoryChapterCard.jsx
+│   │   ├── InsightsExplorer.jsx
+│   │   ├── MuseumShowcase.jsx
+│   │   └── Footer.jsx
+│   │
+│   ├── data/
+│   │   ├── normalizedReceipts.js
+│   │   ├── connectionEngine.js
+│   │   ├── storyEngine.js
+│   │   └── insightsEngine.js
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+│
+├── index.html
+├── package.json
+├── vite.config.js
+├── LICENSE
+└── .gitignore
 ```
 
 ---
 
-## How to Install and Run
+## Getting Started
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v18.0.0 or higher recommended)
-- `npm` (v9.0.0 or higher)
+- Node.js 18+
+- npm 9+
 
-### Step-by-Step Setup
+### Install
+```bash
+npm install
+```
 
-1. **Clone the repository** (or extract the project files):
-   ```bash
-   git clone https://github.com/your-username/LifeInReceipts.git
-   cd LifeInReceipts
-   ```
+### Development
+```bash
+npm run dev
+```
 
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+### Production Build
+```bash
+npm run build
+```
 
-3. **Start the local development server**:
-   ```bash
-   npm run dev
-   ```
-   Open your browser and navigate to `http://localhost:5173` (or the URL displayed in your terminal).
-
-4. **Build for production**:
-   ```bash
-   npm run build
-   ```
-
-5. **Preview the production build locally**:
-   ```bash
-   npm run preview
-   ```
+### Preview Production Build
+```bash
+npm run preview
+```
 
 ---
 
-## npm Commands
+## Design
 
-| Command | Action |
-| :--- | :--- |
-| `npm run dev` | Launches Vite local development server with HMR |
-| `npm run build` | Bundles production-optimized static assets into `dist/` |
-| `npm run preview` | Serves the production build from `dist/` for local preview |
-| `npm run lint` | Runs Vite build check for syntax & type validation |
+The interface uses a dark editorial visual system with deep navy backgrounds, electric blue and cyan accents, glass surfaces, subtle gradients, and motion-based interactions.
+
+The design is intentionally focused on presenting data as an experience rather than a conventional dashboard.
 
 ---
 
-## Future Improvements
+## Performance
 
-- ** Automated Multi-Format Dataset Parser**: Enable drag-and-drop CSV, JSON, TSV, and XML upload to dynamically ingest user receipts into the constellation graph.
-- ** Live OAuth Integration**: Direct API connections with Spotify, Plaid, and Google Location History for real-time receipt syncing.
-- ** Spatial 3D Constellation Engine**: Upgrade the 2D node visualizer to a 3D WebGL space using Three.js / React Three Fiber.
-- ** Personalized PDF/Web Memory Storybooks**: Export curated museum exhibits as shareable interactive links or high-resolution digital storybooks.
+The application uses client-side optimizations to keep exploration responsive across thousands of records.
+
+- Indexed data grouping
+- Memoized calculations
+- Deterministic connection discovery
+- Cached derived results
+- Progressive receipt loading
+- Responsive layouts
 
 ---
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License.
+
+---
+
+## Live Demo
+
+[https://life-in-receipts-lime.vercel.app/](https://life-in-receipts-lime.vercel.app/)
