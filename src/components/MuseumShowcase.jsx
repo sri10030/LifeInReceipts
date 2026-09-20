@@ -49,7 +49,7 @@ const exhibits = [
 export default function MuseumShowcase({ onExhibitClick }) {
   return (
     <section
-      id="stories"
+      id="museum-showcase"
       style={{
         padding: '100px 0',
         background: '#0F172A',

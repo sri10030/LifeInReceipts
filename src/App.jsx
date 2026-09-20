@@ -5,6 +5,7 @@ import ReceiptExplorer from './components/ReceiptExplorer.jsx';
 import ConceptSteps from './components/ConceptSteps.jsx';
 import ConnectionPreview from './components/ConnectionPreview.jsx';
 import ConnectionExplorer from './components/ConnectionExplorer.jsx';
+import StoryExplorer from './components/StoryExplorer.jsx';
 import MuseumShowcase from './components/MuseumShowcase.jsx';
 import ReceiptDetailModal from './components/ReceiptDetailModal.jsx';
 import Footer from './components/Footer.jsx';
@@ -79,6 +80,9 @@ export default function App() {
 
         {/* Phase 4 — Connection Engine Explorer */}
         <ConnectionExplorer onSelectReceipt={handleNodeSelect} />
+
+        {/* Phase 5 — Story Engine & Narrative Life Chapters */}
+        <StoryExplorer onSelectReceipt={handleNodeSelect} />
 
         {/* Editorial Digital Museum Showcase */}
         <MuseumShowcase onExhibitClick={handleExhibitClick} />
