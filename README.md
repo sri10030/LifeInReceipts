@@ -2,6 +2,9 @@
 
 > **Transforming daily digital traces into interactive visual constellations and editorial museum stories.**
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-2563FF?style=for-the-badge&logo=vercel&logoColor=white)](https://life-in-receipts-lime.vercel.app/)  
+🌐 **Live Deployment**: [https://life-in-receipts-lime.vercel.app/](https://life-in-receipts-lime.vercel.app/)
+
 ---
 
 ## Short Description
